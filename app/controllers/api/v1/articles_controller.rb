@@ -21,7 +21,6 @@ module Api
       end
 
       def create
-        binding.pry [:banner]
         @article = Current.user.articles.create!(create_params)
         render :show, status: :created
       end
