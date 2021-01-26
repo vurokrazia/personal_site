@@ -31,8 +31,6 @@ RSpec.describe User, type: :model do
     context 'associations' do
       it { should have_many(:tokens) }
       it { should have_many(:articles) }
-      it { should have_many(:courses) }
-      it { should have_many(:movies) }
     end
   end
 end

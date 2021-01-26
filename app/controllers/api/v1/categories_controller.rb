@@ -34,7 +34,7 @@ module Api
 
       def update
         @category.update!(create_params)
-        render :show, status: :created
+        render :show, status: :ok
       end
 
       private

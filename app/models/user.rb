@@ -31,7 +31,6 @@ class User < ApplicationRecord
   has_many :articles
   has_many :multimedia
   has_one_attached :avatar
-  has_many :episodes
   # validates :avatar, presence: true
   validates :email, presence: true
   validates :password, presence: true
