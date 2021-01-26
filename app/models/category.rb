@@ -23,11 +23,9 @@ class Category < ApplicationRecord
       if Rails.env.development?
         "#{ENV['URL_BASE']}#{Rails.application.routes.url_helpers.rails_blob_url(banner, only_path: true)}"
       else
-        "https://dwwpqm2xrutki.cloudfront.net/#{banner.key}"
-        #banner.service_url
+        "#{ENV['CLOUDFRONT_BUCKET']}/#{banner.key}"
       end
     else
-      # set a default lazily
       nil
     end
   end
