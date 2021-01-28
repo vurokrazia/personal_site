@@ -3,7 +3,7 @@
 require 'rails_helper'
 RSpec.describe Api::V1::ArticlesController, type: :controller do
   describe 'Edit Article' do
-    let!(:bearer) { create(:token)}
+    let!(:bearer) { create(:token) }
     let!(:headers) { { 'Authorization' => "Bearer #{bearer.token}" } }
     let!(:article) { create(:article, user: bearer.user) }
     let!(:article_bodies) { create(:article_body, article: article) }

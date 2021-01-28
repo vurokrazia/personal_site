@@ -50,7 +50,7 @@ class User < ApplicationRecord
   end
 
   def avatar_url
-    url = ""
+    url = ''
     if avatar.attachment
       if Rails.env.development?
         url = Rails.application.routes.url_helpers.rails_blob_url(avatar, only_path: true)
@@ -59,8 +59,8 @@ class User < ApplicationRecord
       end
     else
       # set a default lazily
-      url = ActionController::Base.helpers.asset_path("default_icon.png")
+      url = ActionController::Base.helpers.asset_path('default_icon.png')
     end
-    "#{ENV["URL_BASE"]}#{url}"
+    "#{ENV['URL_BASE']}#{url}"
   end
 end

@@ -16,7 +16,7 @@ class Category < ApplicationRecord
   validates :name, presence: true
   validates :color, presence: true
   has_many :has_categories, dependent: :destroy
-  has_many :articles, through: :has_categories, source: :entity, source_type: "Article"
+  has_many :articles, through: :has_categories, source: :entity, source_type: 'Article'
   has_one_attached :banner
 
   def banner_url

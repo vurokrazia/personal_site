@@ -34,15 +34,15 @@ class Multimedium < ApplicationRecord
   private
 
   def acceptable_image
-    errors.add(:image, "is too big") unless image.byte_size <= 1.megabyte
+    errors.add(:image, 'is too big') unless image.byte_size <= 1.megabyte
   end
 
   def acceptable_type_image
-    acceptable_types = ["image/jpeg", "image/png"]
+    acceptable_types = ['image/jpeg', 'image/png']
     if acceptable_types.include?(image.content_type)
       self.content_type = 0
     else
-      errors.add(:image, "must be a JPEG or PNG")
+      errors.add(:image, 'must be a JPEG or PNG')
     end
   end
 

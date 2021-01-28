@@ -3,7 +3,7 @@
 require 'rails_helper'
 RSpec.describe Api::V1::ArticlesController, type: :controller do
   describe 'Index' do
-    let!(:bearer) { create(:token)}
+    let!(:bearer) { create(:token) }
     let!(:headers) { { 'Authorization' => "Bearer #{bearer.token}" } }
     let!(:articles) { create_list(:article, 10) }
 
