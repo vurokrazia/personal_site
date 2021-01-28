@@ -3,7 +3,7 @@
 require 'rails_helper'
 RSpec.describe Api::V1::CategoriesController, type: :controller do
   describe 'Edit Category' do
-    let!(:bearer) { create(:token)}
+    let!(:bearer) { create(:token) }
     let!(:headers) { { 'Authorization' => "Bearer #{bearer.token}" } }
     let!(:category) { create(:category) }
     context 'create a category' do
