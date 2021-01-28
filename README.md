@@ -6,6 +6,9 @@
 -   MySQL or MariaDB
 -   Docker
 
+## Extra Documentation
+ - https://docs.rubocop.org/rubocop/usage/basic_usage.html
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
