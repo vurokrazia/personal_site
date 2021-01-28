@@ -16,18 +16,10 @@ class Category < ApplicationRecord
   validates :name, presence: true
   validates :color, presence: true
   has_many :has_categories, dependent: :destroy
-  has_many :articles, through: :has_categories, source: :entity, source_type: 'Article'
+  has_many :articles, through: :has_categories, source: :entity, source_type: "Article"
   has_one_attached :banner
 
   def banner_url
-    if banner.attachment
-      if Rails.env.development?
-        "#{ENV['URL_BASE']}#{Rails.application.routes.url_helpers.rails_blob_url(banner, only_path: true)}"
-      else
-        "#{ENV['CLOUDFRONT_BUCKET']}/#{banner.key}"
-      end
-    else
-      nil
-    end
+    ConcernImage.path_image banner
   end
 end

@@ -39,17 +39,8 @@ class Article < ApplicationRecord
 
   scope :order_update, -> { order(updated_at: :DESC) }
   scope :active_articles, -> { where(disabled: false) }
-  include Rails.application.routes.url_helpers
 
   def banner_url
-    if banner.attachment
-      if Rails.env.development?
-        "#{ENV["URL_BASE"]}#{rails_blob_path(banner, only_path: true)}"
-      else
-        "#{ENV['CLOUDFRONT_BUCKET']}/#{banner.key}"
-      end
-    else
-      nil
-    end
+    ConcernImage.path_image banner
   end
 end
