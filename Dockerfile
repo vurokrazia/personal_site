@@ -19,8 +19,6 @@ COPY Gemfile.lock .
 
 RUN bundle install --jobs=4 --retry=3
 
-COPY Gemfile* $APP_HOME/
-
 COPY . $APP_HOME
 
 CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3000"]

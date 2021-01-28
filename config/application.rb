@@ -33,7 +33,6 @@ module PersonalSite
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-
     config.time_zone = 'Monterrey'
     config.active_record.default_timezone = :local # Or :utc
     config.i18n.default_locale = :es
